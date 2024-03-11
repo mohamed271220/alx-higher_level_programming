@@ -1,0 +1,2 @@
+#!/bin/bash
+[[ -z "$PYFILE" ]] || [[ ! -f "$PYFILE" ]] && echo "PYFILE is not set or not a file" && exit 1; python3 "$PYFILE"
