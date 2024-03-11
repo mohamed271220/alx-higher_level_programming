@@ -1,2 +1,2 @@
 #!/bin/bash
-[[ -z "$PYCODE" ]] && echo "PYCODE is not set" && exit 1; python3 -c "$PYCODE"
+if [[ -z "$PYCODE" ]]; then echo "PYCODE is not set"; exit 1; fi; python3 -c "$PYCODE"
