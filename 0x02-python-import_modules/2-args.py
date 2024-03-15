@@ -5,11 +5,11 @@ from sys import argv
 def main():
     num_args = len(argv) - 1
     if num_args == 0:
-        print("Number of arguments: 0.")
+        print("0 arguments.")
     elif num_args == 1:
-        print("Number of argument: 1:")
+        print("1 arguments:")
     else:
-        print("Number of arguments: {}:".format(num_args))
+        print("{} arguments:".format(num_args))
 
     for i, arg in enumerate(argv[1:], start=1):
         print("{}: {}".format(i, arg))
