@@ -1,14 +1,14 @@
 #!/usr/bin/python3
-from calculator_1 import add, subtract, multiply, divide
+from calculator_1 import add, sub, mul, div
 
 
 def main():
     a = 10
     b = 5
     add_result = add(a, b)
-    subtract_result = subtract(a, b)
-    multiply_result = multiply(a, b)
-    divide_result = divide(a, b)
+    subtract_result = sub(a, b)
+    multiply_result = mul(a, b)
+    divide_result = div(a, b)
 
     print("{} + {} = {}".format(a, b, add_result))
     print("{} - {} = {}".format(a, b, subtract_result))
