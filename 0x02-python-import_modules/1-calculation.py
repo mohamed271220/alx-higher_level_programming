@@ -10,10 +10,10 @@ def main():
     multiply_result = multiply(a, b)
     divide_result = divide(a, b)
 
-    print("Add: ", add_result)
-    print("Subtract: ", subtract_result)
-    print("Multiply: ", multiply_result)
-    print("Divide: ", divide_result)
+    print("{} + {} = {}".format(a, b, add_result))
+    print("{} - {} = {}".format(a, b, subtract_result))
+    print("{} * {} = {}".format(a, b, multiply_result))
+    print("{} / {} = {}".format(a, b, divide_result))
 
 
 if __name__ == "__main__":
