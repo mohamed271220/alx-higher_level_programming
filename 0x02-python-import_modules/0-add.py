@@ -6,7 +6,7 @@ def main():
     a = 1
     b = 2
     result = add(a, b)
-    print(f"{a} + {b} = {result}")
+    print(f"{a} + {b} = {result}\n")
 
 
 if __name__ == "__main__":
