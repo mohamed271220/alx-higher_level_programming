@@ -3,10 +3,12 @@
 
 
 class Square:
-    """This is a class that defines a square with a private instance attribute size."""
+    """This is a class that defines a square with a private
+    instance attribute size."""
 
     def __init__(self, size=0):
-        """This is the constructor method that initializes the size of the square."""
+        """This is the constructor method that initializes
+        the size of the square."""
         self.size = size
 
     @property
@@ -26,11 +28,13 @@ class Square:
         self.__size = value
 
     def area(self):
-        """This is a method that returns the current square area."""
+        """This is a method that returns the current
+        square area."""
         return self.__size ** 2
 
     def my_print(self):
-        """This is a method that prints in stdout the square with the character #."""
+        """This is a method that prints in stdout the
+        square with the character #."""
         if self.__size == 0:
             print()
         else:

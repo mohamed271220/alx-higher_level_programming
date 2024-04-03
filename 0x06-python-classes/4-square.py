@@ -3,10 +3,12 @@
 
 
 class Square:
-    """This is a class that defines a square with a private instance attribute size."""
+    """This is a class that defines a square with a
+    private instance attribute size."""
 
     def __init__(self, size=0):
-        """This is the constructor method that initializes the size of the square."""
+        """This is the constructor method that initializes
+        the size of the square."""
         self.size = size
 
     @property
@@ -17,7 +19,8 @@ class Square:
     @size.setter
     def size(self, value):
         """This is a method to set the size.
-        The size must be an integer and greater than or equal to 0.
+        The size must be an integer and greater
+        than or equal to 0.
         """
         if not isinstance(value, int):
             raise TypeError("size must be an integer")
