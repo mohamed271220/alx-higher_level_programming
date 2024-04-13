@@ -1,4 +1,4 @@
-#!/usr/bin/bash
+#!/usr/bin/python3
 """ Module that divides all elements of a matrix """
 
 def matrix_divided(matrix, div):
