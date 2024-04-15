@@ -1,6 +1,7 @@
 #!/usr/bin/python3
 """ Module that divides all elements of a matrix """
 
+
 def matrix_divided(matrix, div):
     """ Function that divides all elements of a matrix """
     if not isinstance(matrix, list) or not all(isinstance(row, list) for row in matrix) or not all(isinstance(item, (int, float)) for row in matrix for item in row):
