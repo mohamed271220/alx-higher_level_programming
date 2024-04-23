@@ -1,9 +1,7 @@
 #!/usr/bin/python3
 """ Base class """
 import json
-from models.rectangle import Rectangle
-from models.square import Square
-from os import path
+
 
 class Base:
     """ Base class """
@@ -43,6 +41,8 @@ class Base:
     @classmethod
     def create(cls, **dictionary):
         """ Creates instance """
+        from models.rectangle import Rectangle
+        from models.square import Square
         if cls is Rectangle:
             new = Rectangle(1, 1)
         elif cls is Square:
@@ -55,6 +55,7 @@ class Base:
     @classmethod
     def load_from_file(cls):
         """ Loads from file """
+        from os import path
         file = "{}.json".format(cls.__name__)
         if not path.isfile(file):
             return []
