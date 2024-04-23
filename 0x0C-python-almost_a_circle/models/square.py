@@ -26,7 +26,6 @@ class Square(Rectangle):
         self.width = value
         self.height = value
 
-
     def __update(self, id=None, size=None, x=None, y=None):
         """ Updates """
         if id is not None:
