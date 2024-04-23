@@ -60,7 +60,7 @@ class Rectangle(Base):
 
     def validate_integer(self, name, value, eq=True):
         '''Method for validating the value.'''
-        if type(value) != int:
+        if not isinstance(value, int):
             raise TypeError("{} must be an integer".format(name))
         if eq and value < 0:
             raise ValueError("{} must be >= 0".format(name))
@@ -83,7 +83,7 @@ class Rectangle(Base):
         return '[{}] ({}) {}/{} - {}/{}'.\
             format(type(self).__name__, self.id, self.x, self.y, self.width,
                    self.height)
-    
+
     def __update(self, id=None, width=None, height=None, x=None, y=None):
         '''Internal method that updates instance attributes via */**args.'''
         if id is not None:
