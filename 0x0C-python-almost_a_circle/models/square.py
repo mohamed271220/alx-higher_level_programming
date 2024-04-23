@@ -38,7 +38,7 @@ class Square(Rectangle):
             self.y = y
 
     def update(self, *args, **kwargs):
-        """ Updates """
+        """ Updates square"""
         if args:
             self.__update(*args)
         elif kwargs:
