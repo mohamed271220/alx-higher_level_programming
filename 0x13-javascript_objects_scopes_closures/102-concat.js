@@ -10,12 +10,12 @@ const fileA = process.argv[2];
 const fileB = process.argv[3];
 const fileC = process.argv[4];
 
-fs.readFile(fileA, 'utf8', (err, dataA) => {
+fs.readFile(fileA, (err, dataA) => {
   if (err) {
     console.error(err);
     process.exit(1);
   }
-  fs.readFile(fileB, 'utf8', (err, dataB) => {
+  fs.readFile(fileB, (err, dataB) => {
     if (err) {
       console.error(err);
       process.exit(1);
