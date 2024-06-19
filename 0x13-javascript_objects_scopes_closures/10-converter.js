@@ -1,15 +1,21 @@
 #!/usr/bin/node
 
-exports.converter = function (base) {
-  function convert (num) {
-    const digits = '0123456789ABCDEF';
-
-    if (num < base) {
-      return digits[num];
+function converter (base) {
+  function convertToBase (number) {
+    if (number === 0) {
+      return '';
+    } else {
+      let remainder = number % base;
+      let quotient = Math.floor(number / base);
+      if (remainder < 10) {
+        return convertToBase(quotient) + remainder;
+      } else {
+        return convertToBase(quotient) + String.fromCharCode(remainder + 55);
+      }
     }
-
-    return convert(Math.floor(num / base)) + digits[num % base];
   }
 
-  return convert;
-};
+  return convertToBase;
+}
+
+module.exports.converter = converter;
