@@ -1,13 +1,12 @@
 #!/usr/bin/python3
 """
-Prints all City objects from the database hbtn_0e_14_usa
+Lists all City objects from the database hbtn_0e_101_usa
 """
 
 import sys
 from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
-from model_state import Base, State
-from model_city import City
+from relationship_city import Base, City
 
 if __name__ == "__main__":
     engine = create_engine(
@@ -16,8 +15,8 @@ if __name__ == "__main__":
         ),
         pool_pre_ping=True
     )
+    Base.metadata.create_all(engine)
     Session = sessionmaker(bind=engine)
     session = Session()
-    for state, city in session.query(State, City).filter(
-            State.id == City.state_id).order_by(City.id).all():
-        print("{}: ({}) {}".format(state.name, city.id, city.name))
+    for city in session.query(City).order_by(City.id):
+        print("{}: {} -> {}".format(city.id, city.name, city.state.name))
