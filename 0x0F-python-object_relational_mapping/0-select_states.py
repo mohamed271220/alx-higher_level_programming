@@ -32,22 +32,25 @@ if __name__ == "__main__":
             passwd=password,
             db=database
         )
+        
         # Create a cursor object using cursor() method
         cursor = db.cursor()
 
         # Execute SQL query to fetch all states sorted by id
         query = "SELECT * FROM states ORDER BY id;"
         cursor.execute(query)
+
         # Fetch all rows from the result set
         results = cursor.fetchall()
 
-        # Print each row as per the example format
+        # Print each row in the format (id, name)
         for row in results:
             print(row)
-
+            
     except MySQLdb.Error as e:
-        print("Error connecting to MySQL database:", e)
+        print(f"Error connecting to MySQL database: {e}")
         sys.exit(1)
+
     finally:
         # Close cursor and database connection
         if 'cursor' in locals():
