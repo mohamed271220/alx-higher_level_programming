@@ -6,9 +6,10 @@ Usage:
     ./0-select_states.py <mysql_username> <mysql_password> <database_name>
 
 This script connects to a MySQL server running on localhost at port 3306,
-fetches all states from the states table in the specified database, and
-prints the results sorted in ascending order by states.id.
+fetches all states from the states table in the specified database,
+and prints the results sorted in ascending order by states.id.
 """
+
 
 import sys
 import MySQLdb
@@ -22,34 +23,34 @@ if __name__ == "__main__":
     password = sys.argv[2]
     database = sys.argv[3]
 
-    # Connect to MySQL database
-    try:
+  try:
+        # Connect to MySQL database
         db = MySQLdb.connect(
-            host="localhost",
+            host='localhost',
             port=3306,
             user=username,
             passwd=password,
             db=database
         )
+        # Create a cursor object using cursor() method
+        cursor = db.cursor()
+
+        # Execute SQL query to fetch all states sorted by id
+        query = "SELECT * FROM states ORDER BY id;"
+        cursor.execute(query)
+        # Fetch all rows from the result set
+        results = cursor.fetchall()
+
+        # Print each row as per the example format
+        for row in results:
+            print(row)
+
     except MySQLdb.Error as e:
         print("Error connecting to MySQL database:", e)
         sys.exit(1)
-    
-    # Create a MySQL cursor
-    cursor = db.cursor()
-    
-    # Execute the SQL query
-    query = "SELECT * FROM states ORDER BY id;"
-    try:
-        cusrsor.execute(query)
-        results = cursor.fetchall()
-        for row in results:
-            print(row)
-    except MySQLdb.Error as e:
-        print("Error executing query:", e)
-        db.close()
-        sys.exit(1)
-
-    # Close cursor and database connection
-    cursor.close()
-    db.close()
+    finally:
+        # Close cursor and database connection
+        if 'cursor' in locals():
+            cursor.close()
+        if 'db' in locals():
+            db.close()
