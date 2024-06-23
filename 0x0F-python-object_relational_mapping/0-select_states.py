@@ -23,7 +23,7 @@ if __name__ == "__main__":
     password = sys.argv[2]
     database = sys.argv[3]
 
-  try:
+    try:
         # Connect to MySQL database
         db = MySQLdb.connect(
             host='localhost',
